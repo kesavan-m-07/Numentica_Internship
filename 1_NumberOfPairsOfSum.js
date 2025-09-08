@@ -8,7 +8,7 @@ numberOfPairs(arr1, sum);
 So output 2
 */
 
-const userInput = [3,3,3,null];
+const userInput = [3,3,3,3,6,0,4,2,null];
 const sumOfPairs = 6;
 
 const findNumberOfPairsOfGivenSum = function (userInput, sumOfPairs) {
@@ -31,11 +31,13 @@ const findNumberOfPairsOfGivenSum = function (userInput, sumOfPairs) {
 
     const complement = sumOfPairs - currentElement;
     
-    if(typeof (mapToHoldComplements[complement]) === 'number'){
-        totalPairs+= mapToHoldComplements[complement];
+    if(mapToHoldComplements[complement]){
+        mapToHoldComplements[complement] = false;
+        totalPairs++;
     }
-    mapToHoldComplements[currentElement] = mapToHoldComplements[currentElement] + 1 || 1;
+    else mapToHoldComplements[currentElement] = true;
   }
+console.log(mapToHoldComplements);
 
   return totalPairs;
 };

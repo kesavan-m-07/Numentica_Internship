@@ -17,7 +17,7 @@ const findTheCountOfEachLetter = function (userInput) {
 
   for (let i = 0; i < userInput.length; i++) {
     const currentElement = userInput[i];
-    if(typeof currentElement !== 'string') continue;
+    if(typeof currentElement !== 'string' || currentElement.length === 0) continue;
     const updatedCurrentElement = currentElement.toLowerCase();
     frequencyMapOfLetters[updatedCurrentElement] = frequencyMapOfLetters[updatedCurrentElement] + 1 || 1;
   }
