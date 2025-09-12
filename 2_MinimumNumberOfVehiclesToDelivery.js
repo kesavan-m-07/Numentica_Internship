@@ -28,11 +28,34 @@ const vehicles = [
   { type: "ace", weightCapacity: 50 },
   { type: "tempo", weightCapacity: 100 },
 ];
+
 const parcels = [
-  { location: "velachery", weight: 32.5 },
+  { location: "velachery", weight: 10},
   { location: "madipakkam", weight: 17 },
   { location: "sholinganallur", weight: 1001 },
+  { location: "velachery", weight: 32.5 },
 ];
+
+const normalizeParcel = function (parcels) {
+  const normalizedParcelsMap = {};
+  parcels?.forEach((parcel) => {
+    const location = parcel["location"];
+    const weightCapacity = parcel["weight"];
+    if (
+      typeof location !== "string" ||
+      typeof weightCapacity !== "number" ||
+      weightCapacity <= 0
+    )
+      return;
+    normalizedParcelsMap[location.trim().toLowerCase()] =
+      (normalizedParcelsMap[location] ?? 0) + weightCapacity;
+  });
+  const normalizedParcels = [];
+  for (let [key, value] of Object.entries(normalizedParcelsMap)) {
+    normalizedParcels.push({ location: key, weight: value });
+  }
+  return normalizedParcels;
+};
 
 const findMinumumNumberOfVehiclesForDelivery = function (vehicles, parcels) {
   if (!Array.isArray(vehicles) || !Array.isArray(parcels)) {
@@ -49,7 +72,7 @@ const findMinumumNumberOfVehiclesForDelivery = function (vehicles, parcels) {
     if (
       typeof nameOfVehicle !== "string" ||
       typeof weightCapcity !== "number" ||
-      weightCapcity < 0
+      weightCapcity <= 0
     ) {
       console.error("Invalid Data..");
       return;
@@ -62,8 +85,9 @@ const findMinumumNumberOfVehiclesForDelivery = function (vehicles, parcels) {
   const sortedVehicleMap = vehicleToWeightMap.sort((a, b) => b[1] - a[1]); //This will sort the input data based on 1th index element (descending)
 
   const minimumVehicles = []; //To Store the final result
-
-  parcels?.forEach((parcel) => {
+  const normalizedParcels = normalizeParcel(parcels);
+  console.log(normalizedParcels);
+  normalizedParcels?.forEach((parcel) => {
     const deliveryLocation = parcel["location"];
     const weightOfParcel = parcel["weight"];
 
@@ -71,7 +95,7 @@ const findMinumumNumberOfVehiclesForDelivery = function (vehicles, parcels) {
       //Check for invalid inputs
       typeof deliveryLocation !== "string" ||
       typeof weightOfParcel !== "number" ||
-      weightOfParcel < 0
+      weightOfParcel <= 0
     ) {
       return;
     }

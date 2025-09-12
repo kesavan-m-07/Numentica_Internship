@@ -18,14 +18,6 @@ const fetchDataFromAPI = async function (BASE_URL) {
     console.error(error.message);
   }
 };
-// console.log(await fetchDataFromAPI());
 
-const dataFromAPI = await fetchDataFromAPI(BASE_URL);
+fetchDataFromAPI(BASE_URL).then(dataFromAPI=> console.log(dataFromAPI));
 
-if(dataFromAPI !== undefined){
-    const {userId,id,title,completed} = dataFromAPI;
-    console.log("UserID:",userId);
-    console.log("Id:",id);
-    console.log("Title:",title);
-    console.log("Completed:",completed);
-}
