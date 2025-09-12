@@ -317,9 +317,9 @@ const inventoryDetails = [
 ];
 
 const purchasedProducts = [
-  { item: "    jam - Apricot   ", quantity: 100 },
-  { null: "  creamers - 10%      ", quatity: 1 },
-  { item: "  cramers - 10%      ", quantity: 1 },
+  { item: "    jam - Apricot   ", quantity: 2 },
+  { item: "  creamers - 10%      ", quantity: 1 },
+  { item: "    jam - Apricot   ", quantity: 2 },
 ];
 
 
@@ -363,7 +363,7 @@ const generateBill = function (inventoryDetails, purchasedProducts) {
     return;
   }
 
-  const mapToHoldProductDetails = {}; //Used to easy retreival of product deatils..
+  const mapToHoldProductDetails = {}; //Used for easy retreival of product deatils..
 
   //Maps the item name as key and object of its details as value
   inventoryDetails?.forEach((item) => {
@@ -388,7 +388,7 @@ const generateBill = function (inventoryDetails, purchasedProducts) {
   
   let totalPrice = 0; 
   
-  normalizedPurchasedProduct?.forEach((item) => {
+  normalizedPurchasedProduct?.forEach((item,index) => {
     if (!item) return;
     const itemName = item["item"]; //get from cleaned user input
     const quantity = item["quantity"];
@@ -401,6 +401,11 @@ const generateBill = function (inventoryDetails, purchasedProducts) {
     
     let productQuantity = quantity;
     if (availableQuantity < quantity) productQuantity = availableQuantity;
+    if(productQuantity === 0){
+      console.error(`Purchase no:${index+1} which is ${itemName} of ${quantity} quantity is not available in the inventory..`);
+      return;
+    }
+    productDetails['quantity'] = (availableQuantity-productQuantity);
     totalPrice += productQuantity * productPrice;
 
   });
