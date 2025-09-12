@@ -41,7 +41,7 @@ const students = [
   },
   {
     id: 1,
-    name: "Ashok",
+    name: "Arun",
     books: ["efd"],
   },
   {
@@ -113,7 +113,7 @@ for (let [bookName, ids] of Object.entries(bookInterestWithIds)) {
     });
   });
 
-  ids?.map((studentId) => {   //Used to build the Book to name map by converting the ids
+  ids?.forEach((studentId) => {   //Used to build the Book to name map by converting the ids
     const studentName = studentMapWithId[studentId];
     if (!bookDetails[bookName]) bookDetails[bookName] = [];
     const eachBookDetails = bookDetails[bookName];
@@ -139,16 +139,16 @@ for (let [bookName, ids] of Object.entries(bookInterestWithIds)) {
 */
 
 const usersWithMostShares = []; //To store the most shared users
-let maxValue = -1;
+let mostShareCount = -1;
 
 for (let [key, value] of Object.entries(studentWithIntrestWithOtherUsers)) {
   const shareCount = value.size;
   const studentName = studentMapWithId[key];
-  if (shareCount === maxValue) usersWithMostShares.push(studentMapWithId[key]);   
-  else if (shareCount > maxValue) {
+  if (shareCount === mostShareCount) usersWithMostShares.push(studentMapWithId[key]);   
+  else if (shareCount > mostShareCount) {
     usersWithMostShares.length = 0;
     usersWithMostShares.push(studentName);
-    maxValue = shareCount;
+    mostShareCount = shareCount;
   }
 }
 

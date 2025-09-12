@@ -101,7 +101,7 @@ const generateSummary = function (transactions) {
   const transactionMap = {}; //To Combine transaction based on the userID
   let summaries = []; //To Hold the final summaries
 
-  transactions?.map((transaction) => {
+  transactions?.forEach((transaction) => {
     const userId = transaction?.userId;
     if (!userId) return;
     if (!transactionMap[userId]) transactionMap[userId] = [];
@@ -113,13 +113,12 @@ const generateSummary = function (transactions) {
   for (let [userId, transactions] of Object.entries(transactionMap)) {
     if (transactions.length === 0) continue;
 
-    const summary = {}; //Each Summary
     let totalAmount = 0;
     let byCategory = {};
     let lastTransactionAt;
     let currency;
 
-    transactions?.map((transaction) => {
+    transactions?.forEach((transaction) => {
 
       const amount = transaction?.amount;
       const lastTransaction = transaction?.ts;
@@ -143,14 +142,7 @@ const generateSummary = function (transactions) {
         lastTransactionAt = lastTransaction;
       }
     });
-
-    //Assign the values to current summary
-    summary["userId"] = userId;
-    summary["totalAmount"] = totalAmount;
-    summary["byCategory"] = byCategory;
-    summary["count"] = transactions.length;
-    summary["lastTransactionAt"] = lastTransactionAt;
-    summary["currency"] = currency;
+    const summary = {userId,totalAmount,byCategory,count:transactions.length,lastTransactionAt,currency}
     summaries.push(summary); // push current summary to overall summaries
   }
 

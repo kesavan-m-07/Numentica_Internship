@@ -13,7 +13,7 @@ const users = ["Arun", "    balu", "cathy", "    ", "aadhir", "aariketh", "Kamal
 const groupNameByInitialLetter = function (users) {
   const nameMapByInitialCharacter = {}; //Map to store the first letter as key and names array as a values
 
-  users?.map((user) => {
+  users?.forEach((user) => {
     if(!user)return;
     const trimmedName = user.trim();  //To avoid leading and trailing space
     if(trimmedName.length===0)return;
