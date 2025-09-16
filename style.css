@@ -1,0 +1,300 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: black;
+  color: white;
+  padding: 0px 20px;
+  width: 60%;
+  margin: 0 auto;
+}
+header {
+  text-align: center;
+}
+
+#contactinfo {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 8px 0px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#navbar {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0px;
+}
+
+hr {
+  border: 1px solid rgb(205, 203, 203);
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  color: white;
+  font-size: small;
+  font-family: cursive;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  /* scale: calc('105'); */
+  border-color: white;
+  transform: scale(1.05);
+}
+
+#name {
+  font-size: xx-large;
+  font-family: serif;
+  margin: 5px 0px;
+}
+
+#role {
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-family: cursive;
+}
+
+#summarySection,
+#skillsSection,
+#experienceSection,
+#projectsSection,
+#EducationSection,
+#AchivementsSection,
+#ContactSection {
+  text-align: center;
+  padding: 10px;
+}
+
+#summary {
+  text-align: justify;
+  font-family: "Courier New", Courier, monospace;
+  font-size: medium;
+  line-height: 2;
+  width: 60%;
+}
+
+#profileImage {
+  border-radius: 20px;
+}
+
+.InternalHeadings {
+  font-size: xx-large;
+  font-family: cursive;
+}
+
+#summaryDetails {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0px;
+  gap: 50px;
+}
+
+table {
+  vertical-align: center;
+  text-align: left;
+  margin: 10px auto;
+  font-size: small;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 2px;
+}
+
+td,
+th {
+  padding: 10px 20px;
+  border-bottom: 1px solid white;
+}
+
+th {
+  background-color: rgb(41, 40, 40);
+  text-align: center;
+  border-bottom: none;
+}
+tr:hover {
+  background-color: rgb(36, 35, 35);
+  cursor: pointer;
+}
+
+#profileImage {
+  height: 300px;
+  width: 200px;
+}
+
+.certificates {
+  border-radius: 20px 20px 0 0;
+  filter: blur(3px);
+  object-fit: fill;
+  width: 100%;
+}
+
+.eachExperience {
+  border-radius: 20px;
+  border: 1px solid white;
+  margin-top: 20px;
+}
+
+#experienceContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*fraction*/
+  gap: 10px;
+}
+
+.figcaption {
+  padding: 10px;
+}
+
+.figcaption p {
+  font-family: "Courier New", Courier, monospace;
+  font-size: small;
+}
+
+.figcaption h3 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#projectsContainer {
+  text-align: left;
+}
+
+.project {
+  border: 1px solid white;
+  margin: 15px;
+  padding: 20px 10px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.project a,
+.project p {
+  margin: 5px 0px;
+}
+
+.Educations {
+  border: 1px solid white;
+  border-radius: 0 30px 0 30px;
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.Educations p {
+  margin: 10px;
+  font-family: cursive;
+}
+
+.Educations span {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+}
+
+#Achievements {
+  text-align: left;
+  list-style-type: circle;
+  font-size: larger;
+  font-family: cursive;
+  margin: 10px 20px;
+}
+
+#Achievements li {
+  line-height: 2;
+}
+#contactMeForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.row{
+  flex: 1;
+  min-width: 300px;
+  margin-right: 20px;
+}
+
+.full-width {
+  flex: 100%;  
+  margin-right: 20px;
+
+}
+
+#contactMeForm label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#contactMeForm input,
+#contactMeForm textarea {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: larger;
+  color: aliceblue;
+  background-color: black;
+}
+
+#message{
+  height: 200px;
+}
+
+form button{
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  padding: 7px 20px;
+  border-radius: 20px;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+form button:hover{
+  transform: scale(1.1);
+}
+
+form button::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100px) rotate(45deg);
+  width: 100%;
+  height: 100%;
+   background-color: rgb(53, 52, 52);
+  z-index: -1;                 
+  transition: all 1s ease;
+}
+
+form button:hover::after {
+   transform: translateX(-100px) rotate(45deg);    
+}
+
+footer{
+  text-align: center;
+  margin: 10px 0;
+}
+
+footer p{
+  font-family: cursive;
+}
+
+footer span{
+  margin-right: 5px;
+  font-size: large;
+  vertical-align: middle;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>My Resume</title>
+  </head>
+  <body>
+    <header>
+      <section>
+        <h1 id="name">Kesavan.M</h1>
+        <p id="role">Web Development Scholor Intern</p>
+        <section id="contactinfo">
+          <p id="email">sampleemail@gmail.com</p>
+          <p id="mobileNumber">+91 xxxxxxxx28</p>
+        </section>
+      </section>
+      <nav>
+        <ul id="navbar">
+          <li class="nav-items"><a href="#summarySection"> Summary</a></li>
+          <li class="nav-items"><a href="#skillsSection">Skills </a></li>
+          <li class="nav-items">
+            <a href="#experienceSection">Experience </a>
+          </li>
+          <li class="nav-items"><a href="#projectsSection"> Projects</a></li>
+          <li class="nav-items"><a href="#EducationSection">Education </a></li>
+          <li class="nav-items">
+            <a href="#AchivementsSection"> Achievements</a>
+          </li>
+          <li class="nav-items"><a href="#ContactSection">Contact Form </a></li>
+        </ul>
+      </nav>
+    </header>
+    <hr />
+
+    <div>
+      <section id="summarySection">
+        <h2 class="InternalHeadings">Summary</h2>
+        <div id="summaryDetails">
+          <img
+            id="profileImage"
+            src="./avatar.jpg"
+            alt="sample Profile Image"
+          />
+          <p id="summary">
+            Hey there! I’m recently Graduated with a Bachelor's in Computer
+            Science, I’ve built a strong foundation in software development,
+            problem-solving, and core computer science principles. My academic
+            experience has shaped the way I approach technical challenges, with
+            a focus on clean code and efficient architecture.
+          </p>
+        </div>
+      </section>
+      <hr />
+      <section id="skillsSection">
+        <h2 class="InternalHeadings">Skills</h2>
+        <table id="skillsTable">
+          <tr>
+            <th>Field</th>
+            <th>Skills</th>
+          </tr>
+          <tr>
+            <td>Programming Languages</td>
+            <td>Java, JavaScript, Python</td>
+          </tr>
+          <tr>
+            <td>Web Development</td>
+            <td>NextJS, ReactJs, NodeJS, SpringBoot, TailwindCSS</td>
+          </tr>
+          <tr>
+            <td>DataBases</td>
+            <td>MySQL, MongoDB</td>
+          </tr>
+          <tr>
+            <td>Familier With</td>
+            <td>C Programming, Django, Scikit-learn</td>
+          </tr>
+        </table>
+      </section>
+      <hr />
+      <section id="experienceSection">
+        <h2 class="InternalHeadings">Experiences</h2>
+        <div id="experienceContainer">
+          <figure class="eachExperience">
+            <img
+              class="certificates"
+              src="./certificate.jpg"
+              alt="experienceCertificate"
+            />
+            <figcaption class="figcaption">
+              <h3>BrandWaves</h3>
+              <p>Full Stack Developer Intern</p>
+              <p>July/2024 - Aug/2024</p>
+            </figcaption>
+          </figure>
+          <figure class="eachExperience">
+            <img
+              class="certificates"
+              src="./certificate.jpg"
+              alt="experienceCertificate"
+            />
+            <figcaption class="figcaption">
+              <h3>BrandWaves</h3>
+              <p>Full Stack Developer Intern</p>
+              <p>July/2024 - Aug/2024</p>
+            </figcaption>
+          </figure>
+          <figure class="eachExperience">
+            <img
+              class="certificates"
+              src="./certificate.jpg"
+              alt="experienceCertificate"
+            />
+            <figcaption class="figcaption">
+              <h3>BrandWaves</h3>
+              <p>Full Stack Developer Intern</p>
+              <p>July/2024 - Aug/2024</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <hr />
+      <section id="projectsSection">
+        <h2 class="InternalHeadings">Projects</h2>
+        <div id="projectsContainer">
+          <article class="project">
+            <h3>Weather App</h3>
+            <p>
+              A simple weather forecasting app built using React and OpenWeather
+              API.
+            </p>
+            <a href="">View on GitHub</a>
+          </article>
+
+          <article class="project">
+            <h3>Connect SocialMedia</h3>
+            <p>Full-stack MERN application with Image uploading support</p>
+            <a href="">View on GitHub</a>
+          </article>
+          <article class="project">
+            <h3>Simple ToDO</h3>
+            <p>Simple ToDo application with checkBox</p>
+            <a href="">View on GitHub</a>
+          </article>
+          <article class="project">
+            <h3>Video Summarization System</h3>
+            <p>Transforms the long videos to short text summaries.</p>
+            <a href="">View on GitHub</a>
+          </article>
+        </div>
+      </section>
+
+      <hr />
+
+      <section id="EducationSection">
+        <h2 class="InternalHeadings">Education</h2>
+        <div class="Educations">
+          <h3>B.E in Computer Science and Engineering</h3>
+          <p>Sept/2022 - May/2025</p>
+          <p>CGPA : <span>7.0</span></p>
+        </div>
+        <div class="Educations">
+          <h3>Diploma In Mechanical Engineering</h3>
+          <p>May/2017 - Sept/2020</p>
+          <p>Percentage : <span>70%</span></p>
+        </div>
+      </section>
+
+      <hr />
+      <section id="AchivementsSection">
+        <h2 class="InternalHeadings">Achievements</h2>
+        <ul id="Achievements">
+          <li>Sample Achievement</li>
+          <li>Sample Achievement</li>
+          <li>Sample Achievement</li>
+          <li>Sample Achievement</li>
+        </ul>
+      </section>
+
+      <hr />
+
+      <section id="ContactSection">
+        <h2 class="InternalHeadings">Contact Me</h2>
+        <form id="contactMeForm">
+          <div class="row">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name">
+  </div>
+
+  <div class="row">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email">
+  </div>
+
+  <div class="full-width">
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject">
+  </div>
+
+  <div class="full-width">
+    <label for="message">Message</label>
+    <textarea id="message" name="message"></textarea>
+  </div>
+  <button type="submit">Submit</button>
+        </form>
+      </section>
+      <hr>
+      <footer >
+        <p><span>&copy;</span>Made By Kesavan</p>
+      </footer>
+    </div>
+  </body>
+</html>
