@@ -13,14 +13,14 @@ const findTheNotCompletedTaskWithDueTodayOrBefore = function(todos){
     const idToUserMap = mapIdWithUserDetails(normalizePeoples(people));
     // console.log(idToUserMap);
     
-    const todayDate = new Date();
+    const todayDate = new Date(); //Date Now
 
     return normalizedTodos?.filter(todo=>{
         const todoDue = todo['todoDue'];
-        const dueDate = new Date(`${todoDue}`);
+        const dueDate = new Date(`${todoDue}`); //Creates new Date object with todo date
         const status = todo['todoStatus']
-        return (dueDate <= todayDate && status !== 'done');
-    }).map(todo=>{
+        return (dueDate <= todayDate && status !== 'done'); //filter condition
+    }).map(todo=>{ //Gets the rsult from the filter and get the required details
         const assignedId = todo['assignedId'];
         const assigneeUser  = idToUserMap[assignedId];
         return {'id':todo['todoId'],'title':todo['todoTitle'],'assigneeName' :assigneeUser['userName'] ,'due':todo['todoDue']}

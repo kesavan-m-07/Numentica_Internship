@@ -15,20 +15,20 @@ import {
   normalizePeoples,
   todos,
   mapIdWithUserDetails,
-} from "./JSONData.js";
+} from "./JSONData.js"; //import the required from JsonData.js
 
+//To accumulate the total opening hours
 export const showTotalEstimatedHoursOfOpenTasks = function (people, todos) {
-  const normalizedTodos = normalizeTodos(todos);
-  const normalizedPeoples = normalizePeoples(people);
 
+  const normalizedTodos = normalizeTodos(todos); //Imported function from jsonData
+  const normalizedPeoples = normalizePeoples(people);
   const idToUserMap = mapIdWithUserDetails(normalizedPeoples);
 
   return normalizedTodos.reduce((accumulatedUserWorkingMap, todoDetails) => {
-    const assigneeId = todoDetails.assignedId ?? "unassigned";
+    const assigneeId = todoDetails.assignedId ?? "unassigned"; //If name is null it should be 'unassigened'
     const userName = idToUserMap[assigneeId]?.userName ?? "unassigned";
-
     const status = todoDetails["todoStatus"];
-    if (status === "done") return accumulatedUserWorkingMap;
+    if (status === "done") return accumulatedUserWorkingMap; //Skip the todo with 'done status'
     if (!accumulatedUserWorkingMap[assigneeId]) {
       accumulatedUserWorkingMap[assigneeId] = { userName, totalHours: 0 };
     }
@@ -39,8 +39,8 @@ export const showTotalEstimatedHoursOfOpenTasks = function (people, todos) {
   }, {});
 };
 
+//To get the details from 'accumulated working map'
 const mapUserWithId = function (accumulatedUserWorkingMap) {
-
   return Object.entries(accumulatedUserWorkingMap).reduce(
     (userToHoursMap, [userId, user]) => {
       userToHoursMap.push({

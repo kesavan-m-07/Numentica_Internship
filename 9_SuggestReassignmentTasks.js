@@ -15,10 +15,13 @@ import {
 } from "./JSONData.js";
 import { showTotalEstimatedHoursOfOpenTasks } from "./3_EstimatedHoursOfOpenTaskGroupedByPersons.js";
 
+
+//To find the people with zero capacity
 const findZeroCapacityPeople = function (peoples) {
   return peoples.filter((people) => people["userCapacityHoursPerDay"] <= 0);
 };
 
+//To get the reassignment details using sorted opening hours of each user
 const getReassignmentDetails = function (taskAssignedToZeroCapacityPeople,sortedRemainingHours,idToUserMap) {
   return taskAssignedToZeroCapacityPeople.reduce(
     (reassignmentDetails, todo) => {
@@ -29,16 +32,16 @@ const getReassignmentDetails = function (taskAssignedToZeroCapacityPeople,sorted
       const assignedUsers = [];
       for (let eachElement of sortedRemainingHours) {
         const [newAssigningId, freeHours] = eachElement;
-        if (remainingHours <= 0) break;
-        if (freeHours <= 0) continue;
+        if (remainingHours <= 0) break; //Already reassigned task
+        if (freeHours <= 0) continue; //user has no free hours
 
         const newUserName = idToUserMap[newAssigningId].userName;
         assignedUsers.push(newUserName);
         const assignable = Math.min(remainingHours, freeHours);
-        remainingHours -= assignable;
-        eachElement[1] -= assignable;
+        remainingHours -= assignable; //subract the todo estimate hours from remaining hours
+        eachElement[1] -= assignable; //subract the todo estimate hours from user's free hours
       }
-      reassignmentDetails.push({
+      reassignmentDetails.push({ //Push the reassignment details
         todoId: todo["todoId"],
         fromPerson: oldUserName,
         toPersonSuggested: assignedUsers,
@@ -50,12 +53,13 @@ const getReassignmentDetails = function (taskAssignedToZeroCapacityPeople,sorted
   );
 };
 
+//Main function to find the suggestion
 const suggestReassignmentOfZeroCapacityPeople = function (people, todos) {
   const normalizedPeoples = normalizePeoples(people);
   const normalizedTodos = normalizeTodos(todos);
 
-  const zeroOrLowerCapacityPeople = findZeroCapacityPeople(normalizedPeoples);
-  const taskAssignedToZeroCapacityPeople = normalizedTodos?.filter((todo) => {
+  const zeroOrLowerCapacityPeople = findZeroCapacityPeople(normalizedPeoples); //Filters out only zero capacity people
+  const taskAssignedToZeroCapacityPeople = normalizedTodos?.filter((todo) => { //Filter the tasks that is assgned to zero capacity people
     const assignedId = todo["assignedId"];
     return (
       assignedId &&
@@ -65,10 +69,10 @@ const suggestReassignmentOfZeroCapacityPeople = function (people, todos) {
     );
   });
 
-  const totalEstimated = showTotalEstimatedHoursOfOpenTasks(people, todos);
+  const totalEstimated = showTotalEstimatedHoursOfOpenTasks(people, todos); //To get the total free hours of each user
 
-  const idToUserMap = mapIdWithUserDetails(normalizedPeoples);
-  const remainingHoursOfUsers = [];
+  const idToUserMap = mapIdWithUserDetails(normalizedPeoples); //Id to userDetails map
+  const remainingHoursOfUsers = []; //To hole the remaining hours of each user as 2D array
   for (let [userId, userDetail] of Object.entries(totalEstimated)) {
     const user = idToUserMap[userId];
     if (!user) continue;
@@ -82,9 +86,9 @@ const suggestReassignmentOfZeroCapacityPeople = function (people, todos) {
 
   const sortedRemainingHours = remainingHoursOfUsers.sort(
     (a, b) => b[1] - a[1]
-  );
+  ); //Sort 2D array based on 1th value which is freehours of each user decending
 
-  return getReassignmentDetails(taskAssignedToZeroCapacityPeople,sortedRemainingHours,idToUserMap);
+  return getReassignmentDetails(taskAssignedToZeroCapacityPeople,sortedRemainingHours,idToUserMap); //pass the flow controm to oter function for readability
 };
 
 const reassignmentDetails = suggestReassignmentOfZeroCapacityPeople(

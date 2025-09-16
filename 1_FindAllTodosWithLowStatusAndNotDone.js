@@ -10,7 +10,8 @@ Example Output:
 
 import { todos, normalizeTodos } from "./JSONData.js";
 
-const findAllTodosWithStatusLowAndNotDone = function (todos) {
+//To find all todo that without low status and not done
+const findAllTodosWithStatusNotLowAndNotDone = function (todos) {
   const normalizedTodos = normalizeTodos(todos);
     // console.log(normalizedTodos);
     
@@ -34,5 +35,5 @@ const findAllTodosWithStatusLowAndNotDone = function (todos) {
   );
 };
 
-const allTodosWithLowStatusNotDone = findAllTodosWithStatusLowAndNotDone(todos);
+const allTodosWithLowStatusNotDone = findAllTodosWithStatusNotLowAndNotDone(todos);
 console.log("allTodosWithLowStatusNotDone: ", allTodosWithLowStatusNotDone);

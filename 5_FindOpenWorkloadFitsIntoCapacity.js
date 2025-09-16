@@ -6,34 +6,45 @@ Aadhir → OK
 Aarik → OVER-ALLOCATED by 4 hrs (capacity 0)
 */
 
-import { people, todos,mapIdWithUserDetails, normalizePeoples } from "./JSONData.js";
-import { showTotalEstimatedHoursOfOpenTasks } from "./3_EstimatedHoursOfOpenTaskGroupedByPersons.js";
+import {
+  people,
+  todos,
+  mapIdWithUserDetails,
+  normalizePeoples,
+} from "./JSONData.js";
+import { showTotalEstimatedHoursOfOpenTasks } from "./3_EstimatedHoursOfOpenTaskGroupedByPersons.js"; //Imported function from 3_rd Problem
 
 const findIfWorkloadFits = function (people, todos) {
   const totalOpenHoursDetails = showTotalEstimatedHoursOfOpenTasks(
     people,
     todos
-  );
+  ); //Gets the total open hours details
 
-  const idToUserMap = mapIdWithUserDetails(normalizePeoples(people));
-  
+  const idToUserMap = mapIdWithUserDetails(normalizePeoples(people)); //Gets the ID map
+
   return Object.entries(totalOpenHoursDetails).reduce(
-    (workLoadDetails, [userId,userDetails]) => {
-        if(userId === 'unassigned')return workLoadDetails;
-        
-        const user = idToUserMap[userId];
-        
-        const workingCapacity = user['userCapacityHoursPerDay'] > 0 ? user['userCapacityHoursPerDay'] : 0;
-        const capacityPerWeek = workingCapacity * 5;
+    //Iterates object using entries and reduce it
+    (workLoadDetails, [userId, userDetails]) => {
+      if (userId === "unassigned") return workLoadDetails;
 
-        const pendingHours = userDetails['totalHours'];
-        const userName = userDetails['userName'];
-        if(capacityPerWeek >= pendingHours){
-            workLoadDetails[userName] = `OK`;
-        }
-        else workLoadDetails[userName] = `OVER-ALLOCATED by ${pendingHours - capacityPerWeek} hrs`;
+      const user = idToUserMap[userId];
 
-        return workLoadDetails
+      const workingCapacity =
+        user["userCapacityHoursPerDay"] > 0
+          ? user["userCapacityHoursPerDay"]
+          : 0; //To avoid the negative values
+      const capacityPerWeek = workingCapacity * 5; //5 Day per week
+
+      const pendingHours = userDetails["totalHours"];
+      const userName = userDetails["userName"];
+      if (capacityPerWeek >= pendingHours) {
+        workLoadDetails[userName] = `OK`;
+      } else
+        workLoadDetails[userName] = `OVER-ALLOCATED by ${
+          pendingHours - capacityPerWeek
+        } hrs`;
+
+      return workLoadDetails; //returns the accumulator for next iteration of reduce
     },
     {}
   );
@@ -41,4 +52,3 @@ const findIfWorkloadFits = function (people, todos) {
 
 const workLoadDetails = findIfWorkloadFits(people, todos);
 console.log(workLoadDetails);
-

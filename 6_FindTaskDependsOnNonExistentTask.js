@@ -9,12 +9,12 @@ import { todos, normalizeTodos } from "./JSONData.js";
 
 const findTaskThatDependsOnNonExistentTask = function (todos) {
   const normalizedTodos = normalizeTodos(todos);
-  const existingTask = normalizedTodos.map((todo) => todo["todoId"]);
+  const existingTask = normalizedTodos.map((todo) => todo["todoId"]); //Creates array of all taskIds
   return normalizedTodos?.filter((todo) => {
-    const todoDependsOn = todo["todoDependsOn"];
+    const todoDependsOn = todo["todoDependsOn"]; //to get the dependency array
     return (
-      Array.isArray(todoDependsOn) &&
-      todoDependsOn.some((id) => !existingTask.includes(id))
+      Array.isArray(todoDependsOn) && //Return false if undefined
+      todoDependsOn.some((id) => !existingTask.includes(id)) //'Some' iterated through each element and return the boolean value for each
     );
   });
 };

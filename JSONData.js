@@ -1,6 +1,6 @@
 export const people = [
   { id: "p1", name: "Arun", email: "arun@example.com", capacityHrsPerDay: 6 },
-  { id: "p2", name: "Uma", email: "uma@", capacityHrsPerDay: 5 }, // invalid email
+  { id: "p2", name: "Uma", email: "uma@", capacityHrsPerDay: 0 }, // invalid email
   {
     id: "p3",
     name: "Aadhir",
@@ -28,7 +28,7 @@ export const todos = [
     status: "in-progress",
     due: "2025-09-18",
     assigneeId: "p1",
-    dependsOn: ["t1"],
+    dependsOn: ["t3"],
   },
   {
     id: "t3",
@@ -38,6 +38,8 @@ export const todos = [
     status: "todo",
     due: "2025-09-20",
     assigneeId: "p2",
+    dependsOn: ["t4"],
+
   },
   {
     id: "t4",
@@ -146,6 +148,8 @@ export const todos = [
   },
 ];
 
+
+//To Normalize the todosWithout duplicate
 export const normalizeTodosWithoutDuplicate = function (todos) {
   return todos?.reduce((normalizedTodos, todo) => {
     let todoTitle = todo?.title;
@@ -162,7 +166,6 @@ export const normalizeTodosWithoutDuplicate = function (todos) {
       typeof todoTitle !== "string" ||
       typeof todoId !== "string" ||
       typeof estimatedHours !== "number" ||
-      estimatedHours <= 0 ||
       typeof priority !== "string" ||
       typeof todoStatus !== "string" ||
       typeof todoDue !== "string" ||
@@ -178,6 +181,7 @@ export const normalizeTodosWithoutDuplicate = function (todos) {
     todoId = todoId.trim().toLowerCase();
     priority = priority.trim().toLowerCase();
     todoStatus = todoStatus.trim().toLowerCase();
+    estimatedHours = estimatedHours <= 0 ? 0 : estimatedHours;
     todoDue = todoDue.trim().toLowerCase();
     assignedId = assignedId?.trim().toLowerCase();
     if (normalizedTodos[todoTitle]) {
@@ -196,6 +200,7 @@ export const normalizeTodosWithoutDuplicate = function (todos) {
   }, {});
 };
 
+//To Normalize the todos with duplicates
 export const normalizeTodos = function (todos) {
   return todos?.reduce((normalizedTodos, todo) => {
     let todoTitle = todo?.title;
@@ -247,6 +252,7 @@ export const normalizeTodos = function (todos) {
   }, []);
 };
 
+//To Normalize the Peoples
 export const normalizePeoples = function (peoples) {
   return peoples?.reduce((normalizedPeoples, user) => {
     let userId = user?.id;
@@ -264,7 +270,7 @@ export const normalizePeoples = function (peoples) {
     }
 
     userId = userId.trim().toLowerCase();
-    // userName = userName.trim().toLowerCase();
+    userName = userName.trim();
     userEmail = userEmail.trim().toLowerCase();
 
     normalizedPeoples.push({
@@ -277,6 +283,7 @@ export const normalizePeoples = function (peoples) {
   }, []);
 };
 
+//To create the map that has the id as key and userdetails as a value
 export const mapIdWithUserDetails = function (peoples) {
   return peoples?.reduce((idToUserMap, user) => {
     const userId = user?.userId;
