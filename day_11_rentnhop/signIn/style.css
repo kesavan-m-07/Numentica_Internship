@@ -1,0 +1,363 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+body {
+  background-color: #f5faff;
+}
+
+body button{
+  cursor: pointer;
+}
+
+
+header {
+  position: absolute;
+  width: 100%;
+}
+
+#top-section {
+  display: none;
+  justify-content: space-between;
+  height: 45px;
+  padding: 0 7%;
+  gap: 0.5rem;
+  background-color: #f5faff;
+  align-items: center;
+}
+
+#drop-down-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social ul {
+  display: flex;
+  list-style-type: none;
+  gap: 1rem;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-item a img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.dropdown select {
+  padding: 0.25rem 0.6rem;
+  background-color: white;
+  border: 1px solid #e3eef9;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+}
+
+.dropdown select option,
+.dropdown-bottom select option {
+  padding: 0.25rem 0.6rem;
+  background-color: #f5faff;
+  border: 1px solid #e3eef9;
+  border-radius: 0.25rem;
+}
+
+#contact {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+#contact h3 {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+#contact p {
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+
+#nav-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 5%;
+  background-color: white;
+  border-radius: 0 0 1.25rem 1.25rem;
+  box-shadow: 0 0 0.6rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+
+#title-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.logo img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.title h2 {
+  font-weight: 800;
+  font-size: 0.875rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.title p {
+  font-weight: 500;
+  font-size: 0.625rem;
+}
+
+#login-signup {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#location {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+#cart-text {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+#cart-text span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+}
+
+#cart-text div {
+  width: 1rem;
+  height: 1rem;
+  background-color: #002040;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.625rem;
+}
+
+#cart {
+  /* display: flex; */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+}
+
+#account-info {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+}
+
+#account-info div {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+  color: #ff5454;
+  border-radius: 50%;
+}
+
+#account-info p {
+  font-size: 0.875rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+}
+
+#account-info p span {
+  font-size: 0.75rem;
+  font-weight: lighter;
+}
+
+#account-info svg:last-of-type {
+  width: 0.6rem;
+  height: 0.6rem;
+}
+#account-info svg:first-of-type {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.main-body {
+  background-image: url(./images/bgimage.png), url(./images/bgimage2.png);
+  height: 100dvh;
+  background-size: contain, contain;
+  background-position: top left, bottom right;
+  background-repeat: no-repeat, no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+#main-container{
+    margin: 1.5rem;
+    padding: 1.23rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+#details{
+    text-align: justify;
+    padding: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+#main-container .input-wrapper{
+    padding: 0.6rem 0.3rem;
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+justify-content: start;
+align-items: center;
+gap: 10px;
+    border-radius: 10px;
+    border: 1px solid #0056F1;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.1rem;
+}
+
+.input-wrapper p{
+    display: inline;
+}
+.input-wrapper input{
+border: none;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 1.1rem;
+outline: none;
+}
+
+#main-container h3{
+    font-size: 1.5rem;
+    color: #002040;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#main-container span{
+    color: #0056F1;
+}
+
+#main-container button a{
+    width: 85%;
+    padding: 0.7rem 0.5rem;
+    border: none;
+    background-color: #0056F1;
+    color: white;
+    border-radius:6px ;
+    text-decoration: none;
+}
+
+#main-container button{
+  border: none;
+}
+
+
+@media (min-width: 600px) {
+  #top-section {
+    display: flex;
+  }
+
+  #drop-down-section {
+    justify-content: flex-start;
+  }
+
+  #contact {
+    text-align: left;
+    padding: 0;
+  }
+  .all-places {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #logo-navbar {
+    align-items: center;
+  }
+
+  #location {
+    display: flex;
+  }
+
+  #nav-section {
+    padding: 0 7%;
+    gap: 0;
+  }
+
+  #title-nav {
+    flex-direction: row;
+    gap: 3rem;
+    text-align: left;
+  }
+
+  #login-signup {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  #cart {
+    display: flex;
+  }
+
+  #main-container {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .main-body {
+    background-position: top left, top right;
+  }
+  #main-container {
+    width: 35%;
+  }
+}
