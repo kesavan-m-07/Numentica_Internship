@@ -1,0 +1,177 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #F5FAFF;
+}
+
+#top-section {
+  display: flex;
+  background-color: #f5faff;
+  justify-content: space-between;
+  height: 45px;
+  padding: 0px 7%;
+  align-items: center;
+}
+
+#drop-down-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.social ul {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+  align-items: center;
+}
+
+.social-item a img {
+  width: 20px;
+  height: 20px;
+}
+
+.dropdown select {
+  padding: 4px 10px;
+  background-color: white;
+  border: 1px solid #e3eef9;
+  border-radius: 4px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.dropdown select option,
+.dropdown-bottom select option {
+  padding: 4px 10px;
+  background-color: #f5faff;
+  border: 1px solid #e3eef9;
+  border-radius: 4px;
+}
+
+#contact {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#contact h3 {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+#contact p {
+  font-weight: 400;
+}
+
+#nav-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 7%;
+  background-color: white;
+  border-radius: 0px 0px 25px 25px;
+  box-shadow: 0 0 10px 4px rgb(0, 0, 0, 0.2);
+}
+
+#title-nav {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  height: 60px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.logo img {
+  width: 56px;
+  height: 56px;
+}
+
+.title h2 {
+  font-weight: 800;
+  font-size: 14px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.title p {
+  font-weight: 500;
+  font-size: 10px;
+}
+
+#login-signup {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+#cart-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#cart-text span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+#cart-text div {
+  width: 16px;
+  height: 16px;
+  background-color: #002040;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+
+#cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#account-info {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+#account-info div {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+  color: #ff5454;
+  border-radius: 50%;
+}
+
+#account-info p {
+  font-size: small;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+#account-info p span {
+  font-size: smaller;
+  font-weight: lighter;
+}
+
+#account-info svg {
+  width: 15px;
+  height: 15px;
+}

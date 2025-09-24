@@ -1,0 +1,795 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #f5faff;
+}
+
+body button {
+  cursor: pointer;
+}
+
+#top-section {
+  display: flex;
+  background-color: #f5faff;
+  justify-content: space-between;
+  height: 45px;
+  padding: 0px 7%;
+  align-items: center;
+}
+
+#drop-down-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.social ul {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+  align-items: center;
+}
+
+.social-item a img {
+  width: 20px;
+  height: 20px;
+}
+
+.dropdown select {
+  padding: 4px 10px;
+  background-color: white;
+  border: 1px solid #e3eef9;
+  border-radius: 4px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.dropdown select option,
+.dropdown-bottom select option {
+  padding: 4px 10px;
+  background-color: #f5faff;
+  border: 1px solid #e3eef9;
+  border-radius: 4px;
+}
+
+#contact {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#contact h3 {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+#contact p {
+  font-weight: 400;
+}
+
+#nav-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 7%;
+  background-color: white;
+  border-radius: 0px 0px 25px 25px;
+  box-shadow: 0 0 10px 4px rgb(0, 0, 0, 0.2);
+}
+
+#title-nav {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  height: 60px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.logo img {
+  width: 56px;
+  height: 56px;
+}
+
+.title h2 {
+  font-weight: 800;
+  font-size: 14px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.title p {
+  font-weight: 500;
+  font-size: 10px;
+}
+
+#login-signup {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+#cart-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#cart-text span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+#cart-text div {
+  width: 16px;
+  height: 16px;
+  background-color: #002040;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+
+#cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#account-info {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+#account-info div {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+  color: #ff5454;
+  border-radius: 50%;
+}
+
+#account-info p {
+  font-size: small;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+#account-info p span {
+  font-size: smaller;
+  font-weight: lighter;
+}
+
+#account-info svg {
+  width: 15px;
+  height: 15px;
+}
+
+#body {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding: 10px 7%;
+  gap: 40px;
+}
+
+#body #sidebar {
+  padding: 20px 7%;
+}
+
+#sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  padding: 10px 15px;
+  border-radius: 13px;
+  box-shadow: 0 0 10px 2px rgb(0, 0, 0, 0.2);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+
+#sort svg {
+  width: 14px;
+  height: 14px;
+}
+
+#sort .left {
+  flex: 1;
+}
+
+#filters {
+  box-shadow: 0 0 10px 4px rgb(0, 0, 0, 0.2);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  border-radius: 15px;
+  margin: 17px 0;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: start;
+}
+
+#filters p {
+  font-size: smaller;
+  font-weight: bold;
+}
+
+#filters h2 {
+  font-size: 17px;
+}
+
+#input-wrapper {
+  border: none;
+  background-color: #7979791a;
+  padding: 8px 15px;
+  border-radius: 20px;
+  width: 90%;
+  text-align: left;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#input-wrapper svg {
+  height: 15px;
+  width: 15px;
+  flex-shrink: 0;
+}
+
+#input-wrapper input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.check-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0;
+  margin: 0;
+}
+
+.check-box-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.check-box {
+  display: none;
+}
+
+.check-box-label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #333;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+}
+
+.check-list a {
+  font-size: 11px;
+  color: gray;
+}
+
+.check-box-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid black;
+  border-radius: 2px;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.check-box:checked + .check-box-label::after {
+  content: "✔";
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: black;
+  font-family: cursive;
+}
+
+#apply-button {
+  width: 100%;
+  background-color: #0056f1;
+  border: none;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+#form {
+  display: flex;
+  gap: 20px;
+  align-items: start;
+}
+
+.form-label {
+  font-size: small;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border: 1px solid grey;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.wrapper input {
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  background-color: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+#dateInputs {
+  display: flex;
+  gap: 20px;
+}
+
+form button {
+  padding: 10px;
+  background-color: #0056f1;
+  border-radius: 20px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  width: 100%;
+  border: none;
+  align-self: self-end;
+}
+
+#form-inputs {
+  display: flex;
+  gap: 20px;
+}
+
+.date-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#duration-label {
+  text-align: right;
+  margin: 0 4px;
+  color: #0056f1;
+}
+
+#main-body {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#main-body h3 {
+  font-size: large;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #797979;
+}
+
+#grid-items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 300px));
+  gap: 20px;
+}
+
+.grid-item {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 5px;
+  padding: 20px 0 0 15px;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 0 10px 2px rgb(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.inner-grid-item1 {
+  grid-column: 1 / 8;
+  margin-bottom: 10px;
+}
+
+.inner-grid-item1 h4 {
+  color: #002040;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: larger;
+  margin-bottom: 3px;
+}
+
+.inner-grid-item1 p {
+  display: inline;
+  font-size: small;
+}
+
+.inner-grid-item1 svg {
+  display: inline;
+  width: 10px;
+}
+
+.inner-grid-item1 div {
+  display: flex;
+  gap: 3px;
+  margin-left: 1px;
+}
+
+.inner-grid-item2 {
+  grid-column: 8 / 13;
+  justify-self: end;
+}
+
+.inner-grid-item2 p {
+  font-size: 11px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-bottom: 4px;
+  background-color: #e3235d;
+  padding: 2px 2px 2px 15px;
+  position: relative;
+  color: white;
+  font-weight: 500;
+}
+
+.inner-grid-item2 p:last-of-type {
+  background-color: #667da7;
+}
+
+.inner-grid-item2 p:first-of-type::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid white;
+}
+
+.inner-grid-item3 {
+  grid-column: 1 / 7;
+  grid-row: 2 / 3;
+}
+
+.inner-grid-item4 {
+  grid-column: 1 / 6;
+  grid-row: 3 / 4;
+}
+
+.inner-grid-item5 {
+  grid-column: 1 / 6;
+  grid-row: 4 / 5;
+}
+
+.inner-grid-item6 {
+  grid-column: 6 / 13;
+  grid-row: 2 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.inner-grid-item6 img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.inner-grid-item7 {
+  grid-column: 1 / 7;
+  grid-row: 5 / 6;
+  margin-bottom: 20px;
+}
+
+.inner-grid-item7 p {
+  text-decoration: underline;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 3px;
+  color: #797979;
+}
+
+.inner-grid-item7 h3 {
+  color: #002040;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.inner-grid-item8 button {
+  background-color: black;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+}
+
+.inner-grid-item8 {
+  grid-column: 7 / 13;
+  grid-row: 5 / 6;
+  justify-self: center;
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.inner-grid-item9 {
+  grid-column: 1 / 13;
+  grid-row: 6 / 7;
+  font-size: 11px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ebf1f7;
+  margin-left: -15px;
+  padding: 10px;
+  border-radius: 0 0 20px 20px;
+}
+
+.inner-grid-item9 p:nth-child(3) {
+  font-size: 10px;
+  color: #ff9524;
+}
+
+.item-label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  color: #797979;
+  margin-bottom: 3px;
+}
+
+.item-value {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 13x;
+  margin-bottom: 15px;
+}
+
+.inner-grid-item9 svg {
+  width: 15px;
+}
+
+.grid-footer {
+  grid-column: 1/4;
+  border-radius: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 200px;
+  background-image: linear-gradient(rgba(0, 86, 241, 0.3), rgba(0, 0, 0, 0));
+}
+
+.grid-footer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#center-content h3 {
+  font-size: 30px;
+  color: #002040;
+}
+
+#center-content button {
+  padding: 10px 15px;
+  background-color: #242424;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-top: 20px;
+}
+
+.flipped {
+  transform: scaleX(-1);
+}
+
+#about-us {
+  padding: 3% 7%;
+  background-color: #002040;
+  color: white;
+}
+
+#logo-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+#logo-navbar ul {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+}
+
+.bottom-nav-item a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: small;
+}
+
+#web-details-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 20px 0;
+}
+
+#web-details-content {
+  min-width: 200px;
+  max-width: 400px;
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  font-size: small;
+}
+
+#downlod-info {
+  display: flex;
+}
+
+#downlod-info div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid white;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+#downlod-info div:first-of-type {
+  margin-right: 15px;
+}
+
+#downlod-info p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: xx-small;
+}
+#downlod-info span {
+  font-weight: normal;
+  font-size: 8px;
+}
+
+#downlod-info svg {
+  width: 16px;
+}
+
+#web-details-content-right {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 10px;
+}
+
+#web-details-info {
+  font-size: x-small;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+  margin-top: 20px;
+  border: 1px solid #9898984d;
+}
+
+#popular-locations h2 {
+  font-size: xx-large;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 3% 0;
+}
+
+.all-places {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.all-places div ul {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style-type: none;
+  gap: 5px;
+}
+
+.all-places div ul a {
+  font-size: 13px;
+  color: white;
+}
+
+.all-places p {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px 0;
+  color: white;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 7px 7%;
+  background-color: black;
+}
+
+#drop-down-section-bottom {
+  display: flex;
+  gap: 20px;
+}
+
+.dropdown-bottom select {
+  color: white;
+  padding: 5px 5px;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+
+#floating-buttons{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  bottom: 10px;
+  right: -7%;
+}
+
+#floating-buttons svg{
+  background-color: #0056F1;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  border-radius: 50%;
+  
+}
+
+#floating-buttons svg:nth-child(2){
+  background-color: #00C058;
+}
