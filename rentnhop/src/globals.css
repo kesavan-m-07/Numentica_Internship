@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme{
+    --font-lufga : 'Lufga', sans-serif;
+    --breakpoint-lg:65rem;
+    --color-customBlue:#2563ea;
+}
+
+
+@keyframes slideUp {
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-10px);
+  }
+}
+
+
+@keyframes slideSide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+    transform-origin: top right;
+  }
+  100% {
+    /* transform: scale(1); */
+    opacity: 1;
+  }
+}
+
+
+
+@keyframes filterSlide {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-slideSide {
+  animation: slideSide 0.3s ease-out forwards;
+}
+.animate-filterSlideUp {
+  animation: filterSlide 0.3s ease-out forwards;
+}
+.animate-scaleUp {
+  animation: scaleUp 0.3s ease-in forwards;
+}
+
+
+.animate-slideUp{
+  animation: slideup 0.2s ease-in-out ;
+}
+
+
+.cards-pagination .swiper-pagination-bullet {
+  @apply w-2 h-2 bg-gray-500 rounded-full opacity-50;
+}
+
+
+.cards-pagination .swiper-pagination-bullet-active {
+    @apply bg-blue-500 w-5 h-2 opacity-100 border border-white;
+} 
+
+.swiper-pagination-bullet {
+  transition: all 0.3s;
+}
+
+.pagination-testimonials .swiper-pagination-bullet {
+  @apply w-2 h-2 mx-10 bg-white rounded-full opacity-100;
+
+}
+
+.pagination-testimonials .swiper-pagination-bullet-active {
+  @apply bg-blue-500 w-5 h-2 opacity-100 border border-white;
+}
+
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
+}
+
+
+.animate-placeholder{
+  @apply  after:absolute after:top-[50%] after:-translate-y-[50%] after:left-0 after:text-black after:px-2 peer-focus:after:-translate-y-[30px] peer-focus:after:text-xs after:transition-all after:duration-200 peer-focus:after:bg-white peer-focus:after:ml-2 peer-focus:after:px-1 after:text-sm
+}

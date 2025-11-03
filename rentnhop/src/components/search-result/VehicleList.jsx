@@ -1,0 +1,21 @@
+import React from 'react'
+import VehicleCard from './VehicleCard'
+
+const VehicleList = ({vehicleList}) => {
+  if(!vehicleList)return null;
+
+  return (
+    <>
+        <h2 className='text-xl p-2 tracking-wider text-gray-500 font-lufga'>Showing {vehicleList.length} vehicle</h2>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            {
+                vehicleList?.map((vehicle)=>(
+                    <VehicleCard key={JSON.stringify(vehicle)} vehicle={vehicle} selectedAreaOfBike={vehicle.selectedArea}/>
+                ))
+            }
+        </div>
+    </>
+  )
+}
+
+export default VehicleList
