@@ -1,1 +1,0 @@
-# Numentica_Internship
